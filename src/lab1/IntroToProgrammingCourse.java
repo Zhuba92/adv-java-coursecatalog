@@ -9,19 +9,16 @@ import javax.swing.*;
  * @author your name goes here
  * @version 1.00
  */
-public class IntroToProgrammingCourse {
-
-    String courseNumber;
-    private String courseName;
-    private double credits;
+public class IntroToProgrammingCourse extends Course{
 
     public IntroToProgrammingCourse(String courseName, String courseNumber) {
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
     }
 
+    @Override
     public String getCourseName() {
-        return courseName;
+        return null;
     }
 
     public final void setCourseName(String courseName) {
@@ -33,30 +30,23 @@ public class IntroToProgrammingCourse {
         this.courseName = courseName;
     }
 
+    @Override
     public String getCourseNumber() {
-        return courseNumber;
+        return null;
     }
 
-    public final void setCourseNumber(String courseNumber) {
-        if (courseNumber == null || courseNumber.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
-            System.exit(0);
-        }
-        this.courseNumber = courseNumber;
-    }
-
+    @Override
     public double getCredits() {
-        return credits;
+        return 0;
     }
 
-    public void setCredits(double credits) {
-        if (credits < 0.5 || credits > 4.0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: credits must be in the range 0.5 to 4.0");
-            System.exit(0);
-        }
-        this.credits = credits;
+    @Override
+    public void setCredits() {
+
     }
 
+    @Override
+    public void setCourseNumber(String courseNumber) {
+
+    }
 }

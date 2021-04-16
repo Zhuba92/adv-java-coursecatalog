@@ -8,7 +8,7 @@ import javax.swing.*;
  * @author your name goes here
  * @version 1.00
  */
-public class AdvancedJavaCourse {
+public class AdvancedJavaCourse implements Course{
 
     private String courseName;
     private String courseNumber;
@@ -24,6 +24,7 @@ public class AdvancedJavaCourse {
         return courseName;
     }
 
+    @Override
     public final void setCourseName(String courseName) {
         if (courseName == null || courseName.length() == 0) {
             JOptionPane.showMessageDialog(null,
@@ -37,6 +38,7 @@ public class AdvancedJavaCourse {
         return courseNumber;
     }
 
+    @Override
     public final void setCourseNumber(String courseNumber) {
         if (courseNumber == null || courseNumber.length() == 0) {
             JOptionPane.showMessageDialog(null,
@@ -50,7 +52,7 @@ public class AdvancedJavaCourse {
         return credits;
     }
 
-    public void setCredits(double credits) {
+    public final void setCredits(double credits) {
         if (credits < 0.5 || credits > 4.0) {
             JOptionPane.showMessageDialog(null,
                     "Error: credits must be in the range 0.5 to 4.0");
